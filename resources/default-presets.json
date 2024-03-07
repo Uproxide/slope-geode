@@ -1,0 +1,44 @@
+{
+    "presets": [
+        {
+            "name": "Easy",
+            "color": [ 27, 85, 222 ],
+            "image": "diffIcon_01_btn_001.png",
+
+            "difficulty": [ 1, 2 ],
+            "uncompleted-filter": true,
+
+            "lives": 25
+        },
+        {
+            "name": "Normal",
+            "color": [ 27, 222, 85 ],
+            "image": "diffIcon_03_btn_001.png",
+
+            "difficulty": [ 2, 3 ],
+            "uncompleted-filter": true,
+
+            "lives": 25
+        },
+        {
+            "name": "Expert",
+            "color": [ 222, 99, 27 ],
+            "image": "diffIcon_05_btn_001.png",
+
+            "difficulty": [ 4, 5 ],
+            "uncompleted-filter": true,
+
+            "lives": 50
+        },
+        {
+            "name": "Super Expert",
+            "color": [ 222, 27, 40 ],
+            "image": "diffIcon_06_btn_001.png",
+
+            "difficulty": [ 6, 7 ],
+            "uncompleted-filter": true,
+
+            "lives": 100
+        }
+    ]
+}
