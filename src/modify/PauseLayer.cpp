@@ -58,6 +58,10 @@ public:
         m_searching = true;
     }
 
+    void reset() {
+        m_searching = false;
+    }
+
     bool getSearching() const { return m_searching; }
 
 private:
@@ -75,6 +79,8 @@ class $modify(PauseLayer_M, PauseLayer) {
         if (mgr->getInGame()) {
             customSetupSlope();
         }
+
+        g_skipper.reset();
     }
 
     void customSetupSlope() {
