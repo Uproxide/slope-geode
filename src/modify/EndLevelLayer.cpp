@@ -30,10 +30,27 @@ class $modify(EndLevelLayer_M, EndLevelLayer) {
             getChildByIDRecursive("retry-button")
         );
 
+        auto* leaderboardButton = static_cast<CCMenuItemSpriteExtra*>(
+            getChildByIDRecursive("leaderboard-button")
+        );
+
+        if (leaderboardButton != nullptr) {
+            leaderboardButton->removeFromParentAndCleanup(true);
+        }
+
         if(m_playLayer->m_isPracticeMode) {
             exitButton->removeFromParentAndCleanup(true);
         } else {
             retryButton->removeFromParentAndCleanup(true);
+        }
+    }
+
+    void keyDown(cocos2d::enumKeyCodes key) {
+        auto* mgr = slope::Manager::sharedManager();
+
+        if (!mgr->getInGame()) {
+            EndLevelLayer::keyDown(key);
+            return;
         }
     }
 
