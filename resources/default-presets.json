@@ -15,7 +15,7 @@
             "color": [ 27, 222, 85 ],
             "image": "diffIcon_03_btn_001.png",
 
-            "difficulty": [ 2, 3 ],
+            "difficulty": [ 3, 4 ],
             "uncompleted-filter": true,
 
             "lives": 25
@@ -25,7 +25,7 @@
             "color": [ 222, 99, 27 ],
             "image": "diffIcon_05_btn_001.png",
 
-            "difficulty": [ 4, 5 ],
+            "difficulty": [ 5 ],
             "uncompleted-filter": true,
 
             "lives": 50
