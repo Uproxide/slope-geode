@@ -8,7 +8,7 @@
             "difficulty": [ 1, 2 ],
             "uncompleted-filter": true,
 
-            "lives": 25
+            "lives": 15
         },
         {
             "name": "Normal",
@@ -18,7 +18,7 @@
             "difficulty": [ 3, 4 ],
             "uncompleted-filter": true,
 
-            "lives": 25
+            "lives": 30
         },
         {
             "name": "Expert",
