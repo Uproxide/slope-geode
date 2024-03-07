@@ -92,7 +92,9 @@ class $modify(PauseLayer_M, PauseLayer) {
         );
 
         menu->insertBefore(skipButton, nullptr);
-        menu->updateLayout();
+        
+        auto* layout = cocos2d::RowLayout::create();
+        menu->setLayout(layout);
     }
 
     void onSkip(cocos2d::CCObject* sender) {
