@@ -100,8 +100,11 @@ class $modify(PlayLayer_M, PlayLayer) {
     }
 
     void gameOver() {
+        auto* mgr = slope::Manager::sharedManager();
         auto* audioEngine = FMODAudioEngine::sharedEngine();
         audioEngine->clearAllAudio();
+
+        mgr->endGame();
 
         auto* scene = slope::GameOverLayer::scene();
         slope::Toolbox::transitionFade(scene);
