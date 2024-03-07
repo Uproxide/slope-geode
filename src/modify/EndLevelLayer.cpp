@@ -22,12 +22,18 @@ class $modify(EndLevelLayer_M, EndLevelLayer) {
     }
 
     void customSetupSlope() {
-        auto* menuButton = static_cast<CCMenuItemSpriteExtra*>(
+        auto* exitButton = static_cast<CCMenuItemSpriteExtra*>(
             getChildByIDRecursive("exit-button")
         );
 
+        auto* retryButton = static_cast<CCMenuItemSpriteExtra*>(
+            getChildByIDRecursive("retry-button")
+        );
+
         if(m_playLayer->m_isPracticeMode) {
-            menuButton->removeFromParentAndCleanup(true);
+            exitButton->removeFromParentAndCleanup(true);
+        } else {
+            retryButton->removeFromParentAndCleanup(true);
         }
     }
 
