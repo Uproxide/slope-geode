@@ -6,7 +6,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 set(GEODE_DISABLE_PRECOMPILED_HEADERS ON)
 
-project(slope VERSION 1.0.0)
+project(slope VERSION 0.1.2)
 
 file(GLOB_RECURSE SOURCE_FILES src/**.cpp)
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
