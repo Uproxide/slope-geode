@@ -2,27 +2,27 @@
     "presets": [
         {
             "name": "Easy",
-            "color": [ 27, 85, 222 ],
+            "color": [ 0, 125, 255 ],
             "image": "diffIcon_01_btn_001.png",
 
             "difficulty": [ 1, 2 ],
             "uncompleted-filter": true,
 
-            "lives": 15
+            "lives": 10
         },
         {
-            "name": "Normal",
-            "color": [ 27, 222, 85 ],
+            "name": "Hard",
+            "color": [ 0, 255, 0 ],
             "image": "diffIcon_03_btn_001.png",
 
             "difficulty": [ 3, 4 ],
             "uncompleted-filter": true,
 
-            "lives": 30
+            "lives": 20
         },
         {
             "name": "Expert",
-            "color": [ 222, 99, 27 ],
+            "color": [ 255, 125, 0 ],
             "image": "diffIcon_05_btn_001.png",
 
             "difficulty": [ 5 ],
@@ -32,7 +32,7 @@
         },
         {
             "name": "Super Expert",
-            "color": [ 222, 27, 40 ],
+            "color": [ 255, 0, 0 ],
             "image": "diffIcon_06_btn_001.png",
 
             "difficulty": [ 6, 7 ],
