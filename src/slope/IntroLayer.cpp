@@ -218,7 +218,7 @@ void IntroLayer::assetDownloadFailed() {
 void IntroLayer::checkReady() {
     // geode::log::debug("IntroLayer::checkPlay()");
 
-    if (m_levelReady && m_transitionReady) {
+    if (m_levelReady && m_transitionReady && !m_cancelAlertOpen) {
         play();
         return;
     }
@@ -282,6 +282,7 @@ void IntroLayer::onSkip(bool yes) {
 
 void IntroLayer::onCancel(bool yes) {
     if (!yes) {
+        m_cancelAlertOpen = false;
         return;
     }
 
@@ -301,6 +302,8 @@ void IntroLayer::onBack(cocos2d::CCObject* sender) {
 
     alert->setTag(Alert::Cancel);
     alert->show();
+
+    m_cancelAlertOpen = true;
 }
 
 void IntroLayer::play() {

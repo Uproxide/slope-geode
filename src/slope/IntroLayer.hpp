@@ -25,7 +25,8 @@ public:
     IntroLayer() :
         m_assetDownloader(nullptr),
         m_levelReady(false),
-        m_transitionReady(false) {}
+        m_transitionReady(false),
+        m_cancelAlertOpen(false) {}
     
     ~IntroLayer() override;
 
@@ -89,6 +90,7 @@ private:
 
     bool m_transitionReady;
     bool m_levelReady;
+    bool m_cancelAlertOpen;
 };
 
 } // namespace slope
