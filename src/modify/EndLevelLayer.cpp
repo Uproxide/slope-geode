@@ -1,6 +1,7 @@
 #include <Geode/modify/EndLevelLayer.hpp>
 
 #include <Geode/binding/CCMenuItemSpriteExtra.hpp>
+#include <Geode/binding/GameManager.hpp>
 #include <Geode/binding/PlayLayer.hpp>
 #include <Geode/utils/cocos.hpp>
 
@@ -61,6 +62,9 @@ class $modify(EndLevelLayer_M, EndLevelLayer) {
             EndLevelLayer::onMenu(sender);
             return;
         }
+
+        auto* gameMgr = GameManager::sharedState();
+        gameMgr->doQuickSave();
 
         auto* audioEngine = FMODAudioEngine::sharedEngine();
         audioEngine->clearAllAudio();
