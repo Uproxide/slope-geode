@@ -105,7 +105,7 @@ void IntroLayer::buildLevelInfo() {
 
     node->setPosition({
         getContentSize().width / 2.0f,
-        getContentSize().height - 40.0f,
+        getContentSize().height - 47.0f,
     });
 
     addChild(node);

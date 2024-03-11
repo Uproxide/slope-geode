@@ -65,8 +65,8 @@ void BigLivesNode::buildLabel() {
     addChild(label);
 }
 
-PlayerNode* BigLivesNode::buildPlayer() {
-    auto* player = PlayerNode::create();
+plate::SimplePlayer* BigLivesNode::buildPlayer() {
+    auto* player = plate::SimplePlayer::create();
 
     player->setScale(2.5f);
     player->setPosition({ -60.0f, 0.0f });

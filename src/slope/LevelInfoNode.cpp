@@ -3,6 +3,8 @@
 #include <Geode/binding/GameLevelManager.hpp>
 #include <fmt/format.h>
 
+#include "../plate/DifficultySprite.hpp"
+
 namespace slope {
 
 LevelInfoNode::~LevelInfoNode() {
@@ -35,12 +37,16 @@ bool LevelInfoNode::init(Style style, GJGameLevel* level) {
     auto winSize = cocos2d::CCDirector::sharedDirector()->getWinSize();
     setContentSize({
         winSize.width - 130.0f,
-        70.0f
+        84.0f
     });
 
     buildName();
     buildAuthor();
     buildID();
+
+    auto* difficultySprite = plate::DifficultySprite::create(m_level, true);
+    difficultySprite->setPosition({ 40.0f, 47.0f });
+    addChild(difficultySprite);
 
     return true;
 }
@@ -57,11 +63,12 @@ void LevelInfoNode::buildName() {
         m_level->m_levelName.c_str(),
         "bigFont.fnt"  
     );
+    label->limitLabelWidth(getContentSize().width * 0.6f, 1.0f, 0.4f);
 
     // Feng shui or some shit
     label->setPosition({
         getContentSize().width / 2.0f,
-        50.0f,
+        57.0f,
     });
 
     addChild(label);
@@ -83,7 +90,7 @@ void LevelInfoNode::buildAuthor() {
 
     label->setPosition({
         getContentSize().width / 2.0f,
-        22.0f,
+        29.0f,
     });
 
     addChild(label);

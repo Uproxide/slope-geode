@@ -3,8 +3,8 @@
 #include <Geode/loader/Mod.hpp>
 #include <string>
 
-#include "PlayerNode.hpp"
 #include "Manager.hpp"
+#include "../plate/SimplePlayer.hpp"
 
 namespace slope {
 
@@ -30,7 +30,7 @@ bool LivesNode::init() {
 
     int lives = Manager::sharedManager()->getNumLives();
 
-    auto* player = PlayerNode::create();
+    auto* player = plate::SimplePlayer::create();
     player->setScale(0.8f);
     player->setPosition({ -22.0f, 0.0f });
     addChild(player);

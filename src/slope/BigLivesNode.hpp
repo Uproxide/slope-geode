@@ -3,7 +3,7 @@
 #include <Geode/Enums.hpp>
 #include <cocos2d.h>
 
-#include "PlayerNode.hpp"
+#include "../plate/SimplePlayer.hpp"
 
 namespace slope {
 
@@ -17,10 +17,10 @@ private:
     void buildCross();
     void buildShadow();
     void buildLabel();
-    PlayerNode* buildPlayer();
+    plate::SimplePlayer* buildPlayer();
 
     int m_numLives;
-    PlayerNode* m_playerNode;
+    plate::SimplePlayer* m_playerNode;
 };
 
 } // namespace slope

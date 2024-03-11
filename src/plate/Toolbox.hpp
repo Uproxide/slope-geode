@@ -15,7 +15,7 @@ public:
 
     //! @brief Initialize a sprite from either a file or sprite frame name.
     //! @param sprite Target sprite.
-    //! @param image Image path or sprite frame name
+    //! @param image Image path or sprite frame name.
     //! @return True on success, false on failure.
     static bool initSprite(cocos2d::CCSprite* sprite, char const* image);
 };

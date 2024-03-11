@@ -1,13 +1,13 @@
-#include "PlayerNode.hpp"
+#include "SimplePlayer.hpp"
 
 #include <Geode/binding/SimplePlayer.hpp>
 #include <Geode/binding/GameManager.hpp>
 #include <Geode/loader/Log.hpp>
 
-namespace slope {
+namespace plate {
 
-PlayerNode* PlayerNode::create() {
-    auto* ret = new PlayerNode();
+SimplePlayer* SimplePlayer::create() {
+    auto* ret = new SimplePlayer();
 
     if (ret && ret->init()) {
         ret->autorelease();
@@ -18,7 +18,7 @@ PlayerNode* PlayerNode::create() {
     return ret;
 }
 
-bool PlayerNode::init() {
+bool SimplePlayer::init() {
     if (!cocos2d::CCNode::init()) {
         return false;
     }
@@ -32,7 +32,7 @@ bool PlayerNode::init() {
 
     setContentSize({ 30.0f, 30.0f });
 
-    auto* inner = SimplePlayer::create(frame);
+    auto* inner = ::SimplePlayer::create(frame);
     inner->setPosition(getContentSize() / 2.0f);
 
     inner->setColor(color);
@@ -52,4 +52,4 @@ bool PlayerNode::init() {
     return true;
 }
 
-} // namespace slope
+} // namespace plate
