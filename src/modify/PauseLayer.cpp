@@ -72,6 +72,11 @@ private:
 Skipper g_skipper;
 
 class $modify(PauseLayer_M, PauseLayer) {
+    static void onModify(auto& self) {
+        // Attempt to load this hook after all the other ones.
+        (void)self.setHookPriority("PauseLayer::customSetup", -1);
+    }
+
     void customSetup() {
         PauseLayer::customSetup();
 
@@ -85,7 +90,7 @@ class $modify(PauseLayer_M, PauseLayer) {
 
     void customSetupSlope() {
         auto* menu = static_cast<cocos2d::CCMenu*>(
-            getChildByIDRecursive("center-button-menu")
+            getChildByID("center-button-menu")
         );
 
         auto* skipSprite = plate::Toolbox::createSprite(
@@ -98,8 +103,15 @@ class $modify(PauseLayer_M, PauseLayer) {
         );
 
         menu->insertBefore(skipButton, nullptr);
+
+        // Fixes a compatibility issue where trying to save and play a level in
+        // the editor causes a crash. You aren't supposed to be able to open
+        // that, so we disable the button for it.
+        auto* editButton = menu->getChildByID("edit-button");
+        editButton->setVisible(false);
         
         auto* layout = cocos2d::RowLayout::create();
+        layout->ignoreInvisibleChildren(true);
         menu->setLayout(layout);
     }
 
