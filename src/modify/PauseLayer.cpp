@@ -108,7 +108,9 @@ class $modify(PauseLayer_M, PauseLayer) {
         // the editor causes a crash. You aren't supposed to be able to open
         // that, so we disable the button for it.
         auto* editButton = menu->getChildByID("edit-button");
-        editButton->setVisible(false);
+        if (editButton != nullptr) {
+            editButton->setVisible(false);
+        }
         
         auto* layout = cocos2d::RowLayout::create();
         layout->ignoreInvisibleChildren(true);
