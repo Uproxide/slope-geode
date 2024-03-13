@@ -29,12 +29,19 @@ static inline int demonIconForDifficulty(int demonDifficulty) {
     }
 }
 
+// This is TodoReturn and I'm too lazy to submit a PR to bindings
+static inline int getAverageDifficulty(GJGameLevel* level) {
+    //! @todo Check if this is accurate.
+    return float(level->m_ratingsSum) / float(level->m_ratings);
+}
+
+
 bool DifficultySprite::init(GJGameLevel* level, bool extra) {
     if (!cocos2d::CCNode::init()) {
         return false;
     }
 
-    int difficulty = level->getAverageDifficulty();
+    int difficulty = getAverageDifficulty(level);
     
     if (level->m_demon) {
         difficulty = demonIconForDifficulty(level->m_demonDifficulty);
